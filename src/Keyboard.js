@@ -1,11 +1,18 @@
 import React from 'react'
+import './keyboard.css'
 
-const Keyboard = ({keychar}) => (
-  <div>
-    <span className="keysymb">
-      {keychar}
-    </span>
-  </div>
-)
+let alphachar  = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+
+const Keyboard = () => {
+  const keyboard = alphachar.map((letter, idx) => {
+    return (
+      <div key={idx}>
+        <span className="keysymb">{letter}</span>
+      </div>
+    )
+  })
+  return keyboard
+
+}
 
 export default  Keyboard
