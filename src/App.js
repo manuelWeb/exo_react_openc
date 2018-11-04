@@ -16,7 +16,7 @@ class App extends Component {
       <div className="App">
         <h1>Hangman react exo</h1>
         {this.chars.map((char,idx)=>(
-          <Keyboard keychar={char} />
+          <Keyboard key={idx} keychar={char} />
         ))}
       </div>
     );
