@@ -1,5 +1,6 @@
 .keyboard_container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 /* https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/
