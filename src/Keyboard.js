@@ -1,7 +1,6 @@
 import React from 'react'
 import './keyboard.css'
 
-
 const Keyboard = () => {
   const alphachar  = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
   const kbd = (<div className="keyboard_container">

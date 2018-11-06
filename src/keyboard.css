@@ -9,6 +9,7 @@
 /* https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/
 */
 .keyboard_container > .key {
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,4 +17,9 @@
   min-width: 3em;
   min-height: 3em;
   background-color: blanchedalmond;
+}
+
+/* à migrer dans module letter */
+.letter {
+  margin-right: 10px;
 }
