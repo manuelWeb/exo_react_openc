@@ -24,11 +24,13 @@ chosenWord = allword[chosenWord]
 const Mask = () => {
   const letters = chosenWord.split('');
     return (
-      letters.map( (letter,idx) => (
+      <div>
+      {letters.map( (letter,idx) => (
         <span key={idx} className="letter">
           {letter}
         </span>)
-      )
+      )}
+      </div>
     )
 }
 console.log(chosenWord);
@@ -38,7 +40,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Hangman react exo</h1>
+        {/* <h1>Hangman react exo</h1> */}
         <Mask />
         <Keyboard />
       </div>
