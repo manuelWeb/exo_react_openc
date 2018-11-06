@@ -19,12 +19,15 @@ const Mask = () => {
   )
 }
 
-class App extends Component {
+const Title = () => (
+  <h1>Hangman play with react exo</h1>
+)
 
+class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <h1>Hangman react exo</h1> */}
+        <Title />
         <Mask />
         <Keyboard />
       </div>
