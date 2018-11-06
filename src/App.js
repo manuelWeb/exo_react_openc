@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import Keyboard from './Keyboard'
-
-const Mask = () => {
+const Mask = ({feedBack}) => {
+  const hidden_ = '__'
+  console.log(feedBack);
   const allword = ["NOMBRE","GEANTE","CORAUX","ROULEAU","EJECTER","LIVRETS", "DIVISION","LICORNES","FOURNEAU","EMPLETTE","CLEPSYDRE","INDIGENES", "ECLATANTE","MATERIAUX","ANAGRAMME","ULTERIEURE","FACTORISER", "RACCROCHER","HIPPOPOTAME","SAUTERELLES"]
   let chosenWord = Math.floor(Math.random() * allword.length)
   chosenWord = allword[chosenWord]
@@ -12,11 +13,16 @@ const Mask = () => {
     <div>
     {letters.map( (letter,idx) => (
       <span key={idx} className="letter">
-        {letter}
+        {feedBack ? letter : hidden_}
       </span>)
     )}
     </div>
   )
+}
+
+const getFeedBack = () => {
+  console.log('falseee');
+  return false
 }
 
 const Title = () => (
@@ -28,7 +34,7 @@ class App extends Component {
     return (
       <div className="App">
         <Title />
-        <Mask />
+        <Mask feedBack={getFeedBack()} />
         <br />
         <Keyboard />
       </div>
