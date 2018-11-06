@@ -1,7 +1,8 @@
 .keyboard_container {
   display: flex;
-  min-width: 65%;
-  max-width: 50%;
+  /* min-width: 20%; */
+  /* max-width: 40%; */
+  width: 40%;
   flex-wrap: wrap;
   justify-content: center;
 }

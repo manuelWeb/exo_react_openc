@@ -20,7 +20,7 @@ const Mask = () => {
 }
 
 const Title = () => (
-  <h1>Hangman play with react exo</h1>
+  <h1 className="title_game">Hangman play with react exo</h1>
 )
 
 class App extends Component {
@@ -29,6 +29,7 @@ class App extends Component {
       <div className="App">
         <Title />
         <Mask />
+        <br />
         <Keyboard />
       </div>
     );
