@@ -25,6 +25,11 @@ const getFeedBack = () => {
   return false
 }
 
+const handleKeyClick = (letter, idx) => {
+  console.log(letter, idx);
+}
+
+
 const Title = () => (
   <h1 className="title_game">Hangman play with react exo</h1>
 )
@@ -36,7 +41,7 @@ class App extends Component {
         <Title />
         <Mask feedBack={getFeedBack()} />
         <br />
-        <Keyboard />
+        <Keyboard onClick={handleKeyClick} />
       </div>
     );
   }
