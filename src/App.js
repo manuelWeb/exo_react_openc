@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Keyboard from './Keyboard'
+import { isArray } from 'util';
 const Mask = ({feedBack}) => {
   const hidden_ = '__'
   console.log(feedBack);
@@ -25,23 +26,45 @@ const getFeedBack = () => {
   return false
 }
 
-const handleKeyClick = (letter, idx) => {
-  console.log(letter, idx);
-}
+// const handleKeyClick = (letter, idx) => {
+//   console.log(letter, idx, this);
+// }
 
+const handleKeyClick = function (letter, idx) {
+  this.setState({ currentKey: letter })
+  const currentKey = this.state
+  // currentKey.push(letter)
+  console.log(`isArray(currentKey)${isArray(currentKey)}`);
+  console.log(letter, idx, this.state);
+}
 
 const Title = () => (
   <h1 className="title_game">Hangman play with react exo</h1>
 )
-
 class App extends Component {
+  // handleKeyClickInitChamps (letter, idx) {
+  //   console.log(letter, idx, this);
+  // }
+  state = {
+    currentKey: []
+  }
+  constructor(props,firstname, lastname) {
+    super(props)
+    this.firstname = firstname;
+    this.lastname = lastname;
+  }
   render() {
     return (
       <div className="App">
         <Title />
         <Mask feedBack={getFeedBack()} />
         <br />
-        <Keyboard onClick={handleKeyClick} />
+        <Keyboard maProp="hola"
+        // onClick={(currentKey) => handleKeyClick(currentKey)}
+        onClick={handleKeyClick.bind(this)}
+        />
+        {/* <Keyboard maProp="hola" onClick={handleKeyClick.bind(this)} /> */}
+        {/* <Keyboard onClick={this.handleKeyClickInitChamps.bind(this)} /> */}
       </div>
     );
   }
