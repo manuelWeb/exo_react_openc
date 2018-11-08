@@ -32,24 +32,35 @@ const Mask = ({feedBack}) => {
 //   console.log(letter, idx, this);
 // }
 
-// const handleKeyClick = function (letter, idx) {
-//   this.setState({ letter: letter })
-//   const letter = this.state
-//   // letter.push(letter)
-//   console.log(`isArray(letter)${isArray(letter)}`);
-//   console.log(letter, idx, this.state);
-// }
 
 const Title = () => (
   <h1 className="title_game">Hangman play with react exo</h1>
 )
 
-function handleKeyClick (letter, idx) {
+// function handleKeyClick (letter, idx) {
+//   const {letters} = this.state
+//   letters.push(letter)
+//   this.setState({letters})
+//   console.log(`char:${idx},
+//   newlettersinstate:${letters[letters.length-1]}`);
+// }
+
+// // NE FONCTIONNE PAS THIS EST INDEFINI
+// const handleKeyClick = (letter, idx) => {
+//   const {letters} = this.state
+//   // letters.push(letter)
+//   // this.setState({letters})
+//   // console.log(`char:${idx}, newlettersinstate:${letters[letters.length-1]}`);
+//   console.log(`char:${idx}, newletter:${letter}`);
+// }
+// // AVEC UNE FUNC THIS EST GARANTI
+const handleKeyClick = function (letter, idx, magicProps) {
   const {letters} = this.state
   letters.push(letter)
   this.setState({letters})
   console.log(`char:${idx},
-  newlettersinstate:${letters[letters.length-1]}`);
+  newlettersinstate:${letters[letters.length-1]},
+  magicProps:${magicProps}`);
 }
 
 class App extends Component {
@@ -69,8 +80,9 @@ class App extends Component {
         {/* <Mask feedBack={getFeedBack()} /> */}
         <Mask />
         <br />
-        {/* <Keyboard onClick={handleKeyClick.bind(this)} /> */}
-        <Keyboard onClick={this.handleKeyClick} />
+        {/* <Keyboard onClick={this.handleKeyClick.bind(this)} /> */}
+        {/* <Keyboard onClick={(letter) => handleKeyClick(letter)} /> */}
+        <Keyboard magicProps="🌈" onClick={this.handleKeyClick} />
       </div>
     );
   }
