@@ -7,7 +7,7 @@ const Keyboard = ({onClick}) => {
     { alphachar.map((letter, idx) => (
       <div key={idx}
         className={`key`}
-        onClick={() => onClick(letter)}
+        onClick={() => onClick(letter,idx)}
       >
         <span className="keysymb">{letter}</span>
       </div>

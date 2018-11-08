@@ -43,23 +43,23 @@ const Mask = ({feedBack}) => {
 const Title = () => (
   <h1 className="title_game">Hangman play with react exo</h1>
 )
+
+function handleKeyClick (letter, idx) {
+  const {letters} = this.state
+  letters.push(letter)
+  this.setState({letters})
+  console.log(`char:${idx},
+  newlettersinstate:${letters[letters.length-1]}`);
+}
+
 class App extends Component {
   state = {
     letters: [],
   }
   constructor(props) {
     super(props)
-    // bind to fx this
-    this.handleKeyClick = this.handleKeyClick.bind(this)
-  }
-
-  handleKeyClick(letter, idx) {
-    const {letters} = this.state
-    letters.push(letter)
-    this.setState({letters})
-    // letters.push(letter)
-    console.log(`isArray letters ${isArray(letters)} letters:${letters}`);
-    // console.log(letter, idx, this.state);
+    // bind handleKeyClick to fx this
+    this.handleKeyClick = handleKeyClick.bind(this)
   }
 
   render() {
@@ -69,8 +69,7 @@ class App extends Component {
         {/* <Mask feedBack={getFeedBack()} /> */}
         <Mask />
         <br />
-        {/* <Keyboard maProp="hola" onClick={handleKeyClick.bind(this)} /> */}
-        {/* <Keyboard onClick={this.handleKeyClick.bind(this)} /> */}
+        {/* <Keyboard onClick={handleKeyClick.bind(this)} /> */}
         <Keyboard onClick={this.handleKeyClick} />
       </div>
     );
