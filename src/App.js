@@ -46,10 +46,14 @@ const Title = () => (
 class App extends Component {
   state = {
     letters: [],
-
+  }
+  constructor(props) {
+    super(props)
+    // bind to fx this
+    this.handleKeyClick = this.handleKeyClick.bind(this)
   }
 
-  handleKeyClickInitChamps = (letter, idx) => {
+  handleKeyClick(letter, idx) {
     const {letters} = this.state
     letters.push(letter)
     this.setState({letters})
@@ -65,13 +69,9 @@ class App extends Component {
         {/* <Mask feedBack={getFeedBack()} /> */}
         <Mask />
         <br />
-        {/* <Keyboard maProp="hola"
-        // onClick={(letter) => handleKeyClick(letter)}
-        onClick={handleKeyClick.bind(this)}
-        /> */}
         {/* <Keyboard maProp="hola" onClick={handleKeyClick.bind(this)} /> */}
-        {/* <Keyboard onClick={this.handleKeyClickInitChamps.bind(this)} /> */}
-        <Keyboard onClick={this.handleKeyClickInitChamps} />
+        {/* <Keyboard onClick={this.handleKeyClick.bind(this)} /> */}
+        <Keyboard onClick={this.handleKeyClick} />
       </div>
     );
   }
