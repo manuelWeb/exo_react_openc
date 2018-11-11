@@ -19,7 +19,11 @@
   background-color: blanchedalmond;
 }
 
-/* à migrer dans module letter */
+/* à migrer dans module letter et mask */
+.mask_content {
+  display: flex;
+  flex-direction: row;
+}
 .letter {
   margin-right: 10px;
 }
