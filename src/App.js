@@ -34,7 +34,7 @@ class App extends Component {
     // console.log(shufleWord.includes(selectedKey))
     // return shufleWord.includes(selectedKey)
     // return shufleWord.map((shufLetter) => shufLetter.includes(selectedKey))
-    return shufleWord.includes(letter)
+    return letter.includes(selectedKey)
   }
 
   render () {
