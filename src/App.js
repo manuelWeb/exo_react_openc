@@ -3,6 +3,7 @@ import './App.css'
 import Keyboard from './Keyboard'
 import handleKeyClick from './handleKeyClick'
 import Mask from './Mask'
+import {Solution} from './Mask'
 
 const aryWords = [ 'NOMBRE', 'GEANTE', 'CORAUX', 'ROULEAU', 'EJECTER', 'LIVRETS', 'DIVISION', 'LICORNES', 'FOURNEAU', 'EMPLETTE', 'CLEPSYDRE', 'INDIGENES', 'ECLATANTE', 'MATERIAUX', 'ANAGRAMME', 'ULTERIEURE', 'FACTORISER', 'RACCROCHER', 'HIPPOPOTAME', 'SAUTERELLES' ]
 
@@ -20,20 +21,18 @@ class App extends Component {
   }
 
   generatWord () {
-    let shufleWord = Math.floor(Math.random() * aryWords.length)
-    shufleWord = aryWords[shufleWord].split('')
+    let shufleNum = Math.floor(Math.random() * aryWords.length)
+    const shufleWord = aryWords[shufleNum].split('')
     return shufleWord
   }
 
   getFeedbackLetter (letter) {
     const { shufleWord, letters } = this.state
+    // const selectedKey = [...letters]
     const selectedKey = letters[letters.length-1]
-    // console.log(shufleWord.map((shufLetter) => shufLetter.includes(letter)))
-    // console.log(shufleWord,' ',selectedKey,' ',letter)
+
     console.log(letter.includes(selectedKey))
-    // console.log(shufleWord.includes(selectedKey))
-    // return shufleWord.includes(selectedKey)
-    // return shufleWord.map((shufLetter) => shufLetter.includes(selectedKey))
+
     return letter.includes(selectedKey)
   }
 
@@ -51,6 +50,8 @@ class App extends Component {
             />
           ))}
         </div>
+        <br />
+        <Solution word={shufleWord} />
         <br />
         <Keyboard magicProps='🌈' onClick={this.handleKeyClick} />
       </div>
