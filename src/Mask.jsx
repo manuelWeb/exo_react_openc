@@ -3,9 +3,7 @@ const hidden_ = '__'
 const aryWords = [ 'NOMBRE', 'GEANTE', 'CORAUX', 'ROULEAU', 'EJECTER', 'LIVRETS', 'DIVISION', 'LICORNES', 'FOURNEAU', 'EMPLETTE', 'CLEPSYDRE', 'INDIGENES', 'ECLATANTE', 'MATERIAUX', 'ANAGRAMME', 'ULTERIEURE', 'FACTORISER', 'RACCROCHER', 'HIPPOPOTAME', 'SAUTERELLES' ]
 
 const Mask = ({ letter, idx, getFeedbackLetter }) => {
-  console.log(
-    `Mask.jsx -> getFeedbackLetter:${getFeedbackLetter} `
-  )
+  // console.log( `Mask.jsx -> getFeedbackLetter:${getFeedbackLetter} ` )
   return (
     <div className={`${getFeedbackLetter}`}>
       <span className='letter' key={idx}>

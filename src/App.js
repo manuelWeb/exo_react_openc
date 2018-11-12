@@ -5,11 +5,11 @@ import Keyboard from './Keyboard'
 import handleKeyClick from './handleKeyClick'
 import Mask, {aryWords, Solution } from './Mask'
 
-console.log(aryWords)
+// console.log(aryWords)
 
 class App extends Component {
   state = {
-    letters: ['L','I'],
+    letters: [],
     shufleWord: this.generatWord()
   }
   constructor (props) {
@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   getFeedbackLetter (letter) {
-    const { shufleWord, letters } = this.state
+    const { letters } = this.state
     // const selectedKey = [...letters]
     // const selectedKey = letters[letters.length-1]
     const selectedKey = letters
