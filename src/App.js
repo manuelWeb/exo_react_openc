@@ -11,7 +11,7 @@ const Title = () => <h1 className='title_game'>Hangman play with react exo</h1>
 
 class App extends Component {
   state = {
-    letters: [],
+    letters: ['L','I'],
     shufleWord: this.generatWord()
   }
   constructor (props) {
@@ -29,11 +29,15 @@ class App extends Component {
   getFeedbackLetter (letter) {
     const { shufleWord, letters } = this.state
     // const selectedKey = [...letters]
-    const selectedKey = letters[letters.length-1]
+    // const selectedKey = letters[letters.length-1]
+    const selectedKey = letters
 
-    console.log(letter.includes(selectedKey))
+    console.log(letter)
+    console.log(selectedKey)
+    console.log(selectedKey.includes(letter))
 
-    return letter.includes(selectedKey)
+    // return letter.includes(selectedKey)
+    return selectedKey.includes(letter)
   }
 
   render () {
