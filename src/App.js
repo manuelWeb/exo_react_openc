@@ -1,13 +1,11 @@
 import React, { Component } from 'react'
 import './App.css'
+import {Title} from './Content_txt'
 import Keyboard from './Keyboard'
 import handleKeyClick from './handleKeyClick'
-import Mask from './Mask'
-import {Solution} from './Mask'
+import Mask, {aryWords, Solution } from './Mask'
 
-const aryWords = [ 'NOMBRE', 'GEANTE', 'CORAUX', 'ROULEAU', 'EJECTER', 'LIVRETS', 'DIVISION', 'LICORNES', 'FOURNEAU', 'EMPLETTE', 'CLEPSYDRE', 'INDIGENES', 'ECLATANTE', 'MATERIAUX', 'ANAGRAMME', 'ULTERIEURE', 'FACTORISER', 'RACCROCHER', 'HIPPOPOTAME', 'SAUTERELLES' ]
-
-const Title = () => <h1 className='title_game'>Hangman play with react exo</h1>
+console.log(aryWords)
 
 class App extends Component {
   state = {
@@ -31,7 +29,6 @@ class App extends Component {
     // const selectedKey = [...letters]
     // const selectedKey = letters[letters.length-1]
     const selectedKey = letters
-
     console.log(letter)
     console.log(selectedKey)
     console.log(selectedKey.includes(letter))
