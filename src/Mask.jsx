@@ -9,12 +9,14 @@ const Mask = ({letter,idx,getFeedbackLetter}) => (
   </div>
 )
 
-export const Solution = ({word}) => (
+const Solution = ({word}) => (
   <div>
     {word.map((letter,idx) => (
-      <span className="letter" key={idx}>{letter}</span>
+      <span className="letter" key={idx}>{`${letter} `}</span>
     ))}
   </div>
 )
+
+export {Solution}
 
 export default Mask
