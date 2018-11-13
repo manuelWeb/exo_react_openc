@@ -1,5 +1,5 @@
 import React from 'react'
-import './Content_txt.css'
+import './Content_txt.scss'
 
 // eslint-disable-next-line react/react-in-jsx-scope
 const Title = ({guesses}) => (
