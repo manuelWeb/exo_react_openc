@@ -10,12 +10,14 @@ import Mask, {aryWords, Solution } from './Mask'
 class App extends Component {
   state = {
     letters: [],
-    shufleWord: this.generatWord()
+    shufleWord: this.generatWord(),
+    guesses: 0,
   }
   constructor (props) {
     super(props)
-    // bind handleKeyClick to fx this
+    // bind {handleKeyClick, guessCount} to fx this
     this.handleKeyClick = handleKeyClick.bind(this)
+    this.guessCount = this.guessCount.bind(this)
   }
 
   generatWord () {
@@ -26,22 +28,23 @@ class App extends Component {
 
   getFeedbackLetter (letter) {
     const { letters } = this.state
-    // const selectedKey = [...letters]
-    // const selectedKey = letters[letters.length-1]
     const selectedKey = letters
-    console.log(letter)
-    console.log(selectedKey)
-    console.log(selectedKey.includes(letter))
-
-    // return letter.includes(selectedKey)
+    console.log(letter, selectedKey, selectedKey.includes(letter))
     return selectedKey.includes(letter)
+  }
+
+  guessCount ({letter}) {
+    console.log(letter);
+    const { guesses } = this.state
+    const newGuesses = guesses +1
+    this.setState({guesses: newGuesses})
   }
 
   render () {
     const { shufleWord } = this.state
     return (
       <div className='App'>
-        <Title />
+        <Title guesses={this.state.guesses} />
         <div className='mask_content'>
           {shufleWord.map((letter, idx) => (
             <Mask
