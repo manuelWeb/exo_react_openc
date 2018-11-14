@@ -9,9 +9,10 @@ import Mask, {aryWords, Solution } from './Mask'
 
 class App extends Component {
   state = {
-    letters: [],
+    letters   : [],
     shufleWord: this.generatWord(),
-    guesses: 0,
+    guesses   : 0,
+    idxClicked: []
   }
   constructor (props) {
     super(props)
@@ -32,14 +33,14 @@ class App extends Component {
     console.log(letter, selectedKey, selectedKey.includes(letter))
     return selectedKey.includes(letter)
   }
-
-  guessCount ({letter}) {
-    // console.log(letter);
+  // fx: expatrier cette méthode
+  guessCount () {
     const { guesses } = this.state
-    const newGuesses = guesses +1
+    const newGuesses = guesses + 1
     this.setState({guesses: newGuesses})
   }
-  isClicked () {
+
+  getIndexKeys () {
     return this.state.idxClicked
   }
 
@@ -53,7 +54,9 @@ class App extends Component {
             <Mask
               letter={letter}
               key={idx}
-              getFeedbackLetter={this.getFeedbackLetter(letter) ? "visible" : "hidden"}
+              getFeedbackLetter={
+                this.getFeedbackLetter(letter) ? "visible" : "hidden"
+              }
             />
           ))}
         </div>
@@ -61,7 +64,7 @@ class App extends Component {
         <Solution word={shufleWord} />
         <br />
         <Keyboard onClick={this.handleKeyClick}
-        isClickedProps={this.isClicked()} />
+        isClickedProps={this.getIndexKeys()} />
       </div>
     )
   }

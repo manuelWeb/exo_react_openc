@@ -6,6 +6,7 @@ const Title = ({guesses}) => (
   <header>
     <h1 className='title_game'>Hangman play with react</h1>
     <span>{guesses}</span>
+    <p> {guesses > 1 ? 'tentatives' : 'tentative '} </p>
   </header>
 )
 
