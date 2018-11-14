@@ -34,10 +34,13 @@ class App extends Component {
   }
 
   guessCount ({letter}) {
-    console.log(letter);
+    // console.log(letter);
     const { guesses } = this.state
     const newGuesses = guesses +1
     this.setState({guesses: newGuesses})
+  }
+  isClicked () {
+    return this.state.idx
   }
 
   render () {
@@ -57,7 +60,7 @@ class App extends Component {
         <br />
         <Solution word={shufleWord} />
         <br />
-        <Keyboard magicProps='🌈' onClick={this.handleKeyClick} />
+        <Keyboard magicProps='🌈' mylet={this.state.letters} onClick={this.handleKeyClick} isClickedProps={this.isClicked()} />
       </div>
     )
   }

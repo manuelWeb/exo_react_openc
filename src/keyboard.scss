@@ -1,7 +1,6 @@
 .keyboard_container {
   display: flex;
-  /* min-width: 20%; */
-  /* max-width: 40%; */
+  /* min-width: 20%; max-width: 40%; */
   width: 40%;
   flex-wrap: wrap;
   justify-content: center;
@@ -16,7 +15,14 @@
   margin: 1px;
   min-width: 3em;
   min-height: 3em;
-  background-color: blanchedalmond;
+  &.inactive {
+    background-color: blanchedalmond;
+  }
+  &.active {
+    color: #ffffff;
+    background-color: black;
+
+  }
 }
 
 /* à migrer dans module letter et mask */
