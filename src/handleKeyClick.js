@@ -4,7 +4,7 @@ const handleKeyClick = function (letter, idx, magicProps) {
   const {letters} = this.state
   letters.push(letter)
   this.setState({letters})
-  this.setState({idx: idx})
+  this.setState({idxClicked: idx})
   // incrément du compteur de tentative
   this.guessCount({letter})
 }

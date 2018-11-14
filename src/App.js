@@ -40,7 +40,7 @@ class App extends Component {
     this.setState({guesses: newGuesses})
   }
   isClicked () {
-    return this.state.idx
+    return this.state.idxClicked
   }
 
   render () {
@@ -60,7 +60,8 @@ class App extends Component {
         <br />
         <Solution word={shufleWord} />
         <br />
-        <Keyboard magicProps='🌈' mylet={this.state.letters} onClick={this.handleKeyClick} isClickedProps={this.isClicked()} />
+        <Keyboard onClick={this.handleKeyClick}
+        isClickedProps={this.isClicked()} />
       </div>
     )
   }
