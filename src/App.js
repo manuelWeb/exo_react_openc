@@ -3,15 +3,8 @@ import './App.css'
 import {Title} from './Content_txt'
 import Keyboard from './Keyboard'
 import handleKeyClick from './handleKeyClick'
-// import guessCount from './guessCount'
 import Mask, {aryWords, Solution } from './Mask'
-
-// console.log(aryWords)
-function guessCount () {
-  const { guesses } = this.state
-  const newGuesses = guesses + 1
-  this.setState({guesses: newGuesses})
-}
+import { guessCount } from './guessCount';
 
 class App extends Component {
   state = {
