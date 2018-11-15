@@ -3,9 +3,15 @@ import './App.css'
 import {Title} from './Content_txt'
 import Keyboard from './Keyboard'
 import handleKeyClick from './handleKeyClick'
+// import guessCount from './guessCount'
 import Mask, {aryWords, Solution } from './Mask'
 
 // console.log(aryWords)
+function guessCount () {
+  const { guesses } = this.state
+  const newGuesses = guesses + 1
+  this.setState({guesses: newGuesses})
+}
 
 class App extends Component {
   state = {
@@ -18,7 +24,7 @@ class App extends Component {
     super(props)
     // bind {handleKeyClick, guessCount} to fx this
     this.handleKeyClick = handleKeyClick.bind(this)
-    this.guessCount = this.guessCount.bind(this)
+    this.guessCount = guessCount.bind(this)
   }
 
   generatWord () {
@@ -32,12 +38,6 @@ class App extends Component {
     const selectedKey = letters
     console.log(letter, selectedKey, selectedKey.includes(letter))
     return selectedKey.includes(letter)
-  }
-  // fx: expatrier cette méthode
-  guessCount () {
-    const { guesses } = this.state
-    const newGuesses = guesses + 1
-    this.setState({guesses: newGuesses})
   }
 
   getIndexKeys () {
