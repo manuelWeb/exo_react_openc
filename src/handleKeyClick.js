@@ -1,7 +1,7 @@
 const idxKeyClickedArray = []
 
 const handleKeyClick = function (letter, idx, magicProps, guessCount) {
-  console.clear();
+  // console.clear();
   const {letters} = this.state
   letters.push(letter)
   idxKeyClickedArray.push(idx)

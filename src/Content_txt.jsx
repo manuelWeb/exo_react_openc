@@ -1,3 +1,4 @@
+import propTypes from 'prop-types'
 import React from 'react'
 import './Content_txt.scss'
 
@@ -9,5 +10,9 @@ const Title = ({guesses}) => (
     <p> {guesses > 1 ? 'tentatives' : 'tentative '} </p>
   </header>
 )
+
+Title.propTypes = {
+  guesses: propTypes.number.isRequired,
+}
 
 export {Title}

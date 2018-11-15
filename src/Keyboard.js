@@ -1,4 +1,5 @@
 import React from 'react'
+import propTypes from 'prop-types'
 import './keyboard.scss'
 
 const Keyboard = ({onClick, magicProps, isClickedProps}) => {
@@ -21,6 +22,10 @@ const Keyboard = ({onClick, magicProps, isClickedProps}) => {
     )}
   </div>)
   return kbd
+}
+
+Keyboard.propTypes = {
+  onClick: propTypes.func.isRequired
 }
 
 
