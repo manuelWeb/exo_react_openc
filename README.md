@@ -1,4 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# TODO
+- @see JS accesseurs/mutateurs & Object.assign(cible, ...sources)
+  - [MDN]( https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/assign )
 
 ## Available Scripts
 
