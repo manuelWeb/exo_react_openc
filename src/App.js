@@ -5,6 +5,7 @@ import Keyboard from './Keyboard'
 import handleKeyClick from './handleKeyClick'
 import Mask, {aryWords, Solution } from './Mask'
 import { guessCount } from './guessCount';
+import { isArray } from 'util';
 
 class App extends Component {
   state = {
@@ -18,12 +19,19 @@ class App extends Component {
     // bind {handleKeyClick, guessCount} to fx this
     this.handleKeyClick = handleKeyClick.bind(this)
     this.guessCount = guessCount.bind(this)
+    this.test = this.test.bind(this)
   }
 
   generatWord () {
     let shufleNum = Math.floor(Math.random() * aryWords.length)
     const shufleWord = aryWords[shufleNum].split('')
     return shufleWord
+  }
+
+  test() {
+    const { guesses } = this.state;
+    // console.log(guesses);
+    return guesses
   }
 
   getFeedbackLetter (letter) {
@@ -39,6 +47,8 @@ class App extends Component {
 
   render () {
     const { shufleWord } = this.state
+    console.log('typeof this.test():'+typeof this.test());
+    console.log('isArray(this.test()):'+isArray(this.test()));
     return (
       <div className='App'>
         <Title guesses={this.state.guesses} />

@@ -7,7 +7,8 @@ export function guessCount() {
   this.setState({ guesses: newGuesses });
 }
 
-guessCount.propTypes = {
-  guesses: propTypes.string.isRequired,
-  newGuesses: propTypes.string.isRequired
+// newGuesses: propTypes.number.isRequired,
+guessCount.PropTypes = {
+  guesses: propTypes.array.isRequired,
+  newGuesses: propTypes.arrayOf(propTypes.string).isRequired,
 }
