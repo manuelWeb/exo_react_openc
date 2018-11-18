@@ -1,14 +1,17 @@
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
-
-export function guessCount() {
-  const { guesses } = this.state;
-  const newGuesses = guesses + 1;
-  this.setState({ guesses: newGuesses });
+// export function guessCount() {
+const guessCount = function () {
+  const { guesses } = this.state
+  console.log(`guessCount{guesses}:${guesses} `)
+  const newGuesses = guesses + 1
+  this.setState({ guesses: newGuesses })
+  return 'this.state.guesses'
 }
 
-// newGuesses: propTypes.number.isRequired,
-guessCount.PropTypes = {
-  guesses: propTypes.array.isRequired,
-  newGuesses: propTypes.arrayOf(propTypes.string).isRequired,
+// ne renvoi jamais d'erreur :
+guessCount.propTypes = {
+  guesses: PropTypes.bool.isRequired
 }
+
+export default guessCount

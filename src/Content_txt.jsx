@@ -1,4 +1,4 @@
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import React from 'react'
 import './Content_txt.scss'
 
@@ -12,7 +12,7 @@ const Title = ({guesses}) => (
 )
 
 Title.propTypes = {
-  guesses: propTypes.number.isRequired,
+  guesses: PropTypes.number.isRequired,
 }
 
 export {Title}

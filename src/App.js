@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
+import { isArray } from 'util';
+
 import './App.css'
 import {Title} from './Content_txt'
 import Keyboard from './Keyboard'
 import handleKeyClick from './handleKeyClick'
 import Mask, {aryWords, Solution } from './Mask'
-import { guessCount } from './guessCount';
-import { isArray } from 'util';
+// import { guessCount } from './guessCount';
+import guessCount from './guessCount';
 
 class App extends Component {
   state = {
@@ -33,14 +35,12 @@ class App extends Component {
     // console.log(guesses);
     return guesses
   }
-
   getFeedbackLetter (letter) {
     const { letters } = this.state
     const selectedKey = letters
     console.log(letter, selectedKey, selectedKey.includes(letter))
     return selectedKey.includes(letter)
   }
-
   getIndexKeys () {
     return this.state.idxClicked
   }
