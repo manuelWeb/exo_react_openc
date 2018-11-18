@@ -1,9 +1,10 @@
 import React from 'react'
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import './keyboard.scss'
 
 const Keyboard = ({onClick, magicProps, isClickedProps}) => {
-  const alphachar  = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+  // const alphachar  = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+  const alphachar  = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ']
   console.log( '___'+isClickedProps );
   const kbd = (<div className="keyboard_container">
     { alphachar.map((letter, idx) =>
@@ -25,7 +26,7 @@ const Keyboard = ({onClick, magicProps, isClickedProps}) => {
 }
 
 Keyboard.propTypes = {
-  onClick: propTypes.func.isRequired
+  onClick: PropTypes.func.isRequired
 }
 
 
